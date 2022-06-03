@@ -1,0 +1,20 @@
+---
+title: Posts
+description: The Blog
+layout: layouts/main
+eleventyNavigation:
+  key: Posts
+---
+
+{% import "macros/post_card.njk" as post_card %}
+
+<header>
+  <h4 class="text-xl font-bold">Posts</h4>
+</header>
+<main>
+  <div class="px-2 md:px-8 mt-2 sm:mt-10 lg:mt-20 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 max-w-md md:max-w-5xl mx-auto">
+    {% for post in collections.post | reverse %}
+      {{ post_card.card(post) }}
+    {% endfor %}
+  </div>
+</main>
