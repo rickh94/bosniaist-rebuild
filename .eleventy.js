@@ -5,7 +5,7 @@ const { EleventyRenderPlugin } = require("@11ty/eleventy");
 const EleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const now = String(Date.now());
 
-const SITE_TITLE = "My Website";
+const SITE_TITLE = "Bosnia International Servant Trip";
 
 let figoptions = {
   figcaption: true,

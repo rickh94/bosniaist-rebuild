@@ -13,5 +13,15 @@ collections:
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "layouts/blog_post.njk" }
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "Snippet", name: "snippet", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: "page_content"
+    label: "Page Content"
+    create: false
+    folder: "src/_page_content"
+    slug: "{{slug}}"
+    preview_path: "{{slug}}"
+    fields:
+      - { label: "Featured Image", widget: "image"}
       - { label: "Body", name: "body", widget: "markdown" }

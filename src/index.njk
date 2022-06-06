@@ -3,15 +3,71 @@ title: Bosnia International Servant Trip
 description: This is a website
 layout: layouts/main.njk
 eleventyNavigation:
-  key: Home
-  order: 0
-  hideOnDesktop: true
+key: Home
+order: 0
+hideOnDesktop: true
 ---
 
-<div class="max-w-3xl mx-auto px-4">
-  <h1 class="font-bold text-4xl">This is a website</h1>
-  <p>We will need to give it some content</p>
-</div>
+<header class="w-screen bg-cover bg-center"
+        style="background-image: url('/assets/img/bosnia_welcome_featured.jpg')"
+        id="index-hero">
+  <div class="bg-stone-800 bg-opacity-70 w-full h-96 md:h-[28rem]  flex items-center">
+    <div class="max-w-3xl mx-auto md:mb-24 px-4">
+      <h1 class="text-white font-bold text-3xl md:text-6xl mb-2 text-shadow">
+        Welcome to the Bosnia International Servant Trip
+      </h1>
+      <p class="text-beige-100 text-lg">A ministry of healing, hope, and peace for Bosnia-Herzegovina and the world.</p>
+      {#      TODO: add cta #}
+    </div>
+  </div>
+</header>
+<section class="border-b border-black pb-4 max-w-3xl mx-auto px-4 mt-8" id="index-pinned-text">
+  <h1 id="index-pinned-text-title" class="font-bold text-2xl mb-2">The Pandemic has prevented us from traveling.</h1>
+  <p id="index-pinned-text-content">
+    The Leadership Team is busy discussing and planning for our next trip. However, it's not possible to predict when it
+    will be.
+  </p>
+</section>
+<main class="max-w-3xl mx-auto px-4 mt-8 space-y-4" id="index-main-content">
+  <section id="index-blurb">
+    <h1 id="index-blurb-title" class="font-bold text-3xl mb-2">The Ministry</h1>
+    <p id="index-blurb-content">The <strong class="font-bold">Bosnia International Servant Trip</strong> is a ministry
+      of the
+      <a href="https://njsynod.org" class="text-amber-700 hover:underline font-bold tracking-wide selectable">New Jersey
+        Synod</a>,
+      <a href="https://elca.org" class="text-amber-700 hover:underline font-bold tracking-wide selectable">ELCA</a>
+      that strives to build peace in Bosnia-Herzegovina through the wonderful children of this beautiful country.
+      {#    TODO: better sentence #}
+      Each year, together with our Bonsian partners and friends, we conduct one-day camps across the country to promote
+      peace, reconciliation, and racial and ethnic equality. See how you can get involved below!
+    </p>
+  </section>
+  <section id="index-actions">
+    <h2 id="index-actions-title" class="font-bold text-3xl mb-6 text-center">I'd like to...</h2>
+    <div class="grid w-48 mx-auto md:w-auto grid-cols-1 md:grid-cols-4 gap-4">
+      <a href="/ministry"
+         class="h-32 border-2 rounded-lg border-stone-900 flex items-center justify-center  text-center px-6 drop-shadow font-bold text-2xl shadow-lg bg-beige-400 hover:shadow-xl transition duration-200 ease-out hover:border-amber-700 hover:text-amber-700 mx-auto"
+      >
+        Read about the Ministry
+      </a>
+      <a href="/travel-team"
+         class="h-32 border-2 rounded-lg border-stone-900 flex items-center justify-center  text-center px-6 font-bold text-2xl shadow-lg bg-beige-400 hover:shadow-xl transition duration-200 ease-out hover:border-amber-700 hover:text-amber-700 mx-auto"
+      >
+        Travel to Bosnia
+      </a>
+      <a href="/home-team"
+         class="h-32 border-2 rounded-lg border-stone-900 flex items-center justify-center  text-center px-6 font-bold text-2xl shadow-lg bg-beige-400 hover:shadow-xl transition duration-200 ease-out hover:border-amber-700 hover:text-amber-700 mx-auto"
+      >
+        Help Out at Home
+      </a>
+      <a href="/donate"
+         class="h-32 border-2 rounded-lg border-stone-900 flex items-center justify-center  text-center px-6 font-bold text-2xl shadow-lg bg-beige-400 hover:shadow-xl transition duration-200 ease-out hover:border-amber-700 hover:text-amber-700 mx-auto"
+      >
+        Give Money
+      </a>
+    </div>
+  </section>
+</main>
 
 <script>
   if (window.netlifyIdentity) {

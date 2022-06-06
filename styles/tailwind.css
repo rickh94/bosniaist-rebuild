@@ -2,8 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+    font-family: 'Charis SIL', serif;
+}
+
 .selectable:focus {
-    @apply ring-2 ring-black ring-offset-white ring-offset-2 outline-none rounded;
+    @apply ring-2 ring-amber-800 ring-offset-white ring-offset-2 outline-none rounded;
 }
 
 .nav-link {

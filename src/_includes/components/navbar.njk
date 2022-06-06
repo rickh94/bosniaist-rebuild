@@ -6,7 +6,7 @@
 {% set navPages = collections.all | eleventyNavigation %}
 
 <div x-cloak x-data="{ menuOpen: false }">
-  <header class="flex justify-between items-center px-4 lg:px-8 lg:pt-4 py-2 h-16 z-20 bg-amber-100" x-cloak>
+  <header class="flex justify-between items-center px-4 lg:px-10 h-20 bg-gradient-to-br from-beige-200 via-beige-300 to-beige-200" x-cloak>
     {% include "components/sitetitle.njk" %}
     {#  Desktop nav menu  on lg and larger #}
     <nav class="hidden lg:flex space-x-1 lg:space-x-2 items-center">
@@ -36,7 +36,7 @@
     </div>
   </header>
   {#  Mobile nav menu, with slide from right animation #}
-  <div class="top-0 left-0 absolute w-screen h-screen z-50 bg-white pt-2" x-show="menuOpen"
+  <div class="top-0 left-0 fixed w-screen h-screen z-50 bg-gradient-to-br from-beige-200 to-beige-300 pt-2" x-show="menuOpen"
        x-transition:enter="transition ease-out duration-300 transform"
        x-transition:enter-start="translate-x-full"
        x-transition:enter-end="translate-x-0"
