@@ -1,5 +1,5 @@
 const htmlmin = require("html-minifier");
-const markdownIt = require('markdown-it');
+const markdownIt = require("markdown-it");
 const mdFigcaption = require("markdown-it-image-figures");
 const { EleventyRenderPlugin } = require("@11ty/eleventy");
 const EleventyNavigationPlugin = require("@11ty/eleventy-navigation");
@@ -23,7 +23,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy({ "./_tmp/style.css": "./style.css" });
   eleventyConfig.addPassthroughCopy("./assets");
-  eleventyConfig.addPassthroughCopy({"./src/admin": "./admin"});
+  eleventyConfig.addPassthroughCopy({ "./src/admin": "./admin" });
 
   eleventyConfig.addShortcode("version", function () {
     return now;
@@ -53,18 +53,36 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter("sortByIndex", (value) => {
-    value.sort((a, b) => a.data.index - b.data.index)
-    return value;
-  })
+    value.sort((a, b) => a.data.index - b.data.index);
+    return [...value];
+  });
+
+  eleventyConfig.addFilter("sortByOrder", (value) => {
+    return value.sort((a, b) => a.data.order - b.data.order);
+    // console.log('sorted' + newList.map(item => item.data.order))
+    // return newList;
+  });
+
+  eleventyConfig.addFilter("removeHidden", (value) => {
+    return value.filter((item) => !item.data.hidden);
+  });
+
   eleventyConfig.addFilter("appendSiteTitle", (value) => {
     if (value.includes(SITE_TITLE)) {
       return value;
     } else {
       return `${value} | ${SITE_TITLE}`;
     }
-  })
+  });
 
   eleventyConfig.setLibrary("md", mdLib);
+
+  eleventyConfig.addCollection("ministryFilteredSorted", function (collectionApi) {
+    return collectionApi
+      .getFilteredByTag("ministry")
+      .filter(item => !item.data.hidden)
+      .sort((a, b) => a.data.order - b.data.order);
+  });
 
   return {
     dir: {

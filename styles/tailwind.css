@@ -67,7 +67,7 @@ html {
 }
 
 .selectable:focus {
-    @apply ring-2 ring-gray-900 ring-offset-white ring-offset-2 outline-none rounded;
+    @apply ring-2 ring-amber-800 ring-offset-beige-200 ring-offset-2 outline-none rounded;
 }
 
 @screen sm {
