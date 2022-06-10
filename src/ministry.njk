@@ -8,49 +8,12 @@ eleventyNavigation:
   order: 1
 # @formatter:on
 ---
-<style>
-    h2 {
-        font-size: 2.25rem;
-        line-height: 2.5rem;
-        font-weight: bold;
-        margin-bottom: 1rem;
-    }
-
-    h3 {
-        font-size: 1.5rem;
-        line-height: 2rem;
-        font-weight: bold;
-        margin-bottom: 0.25rem;
-    }
-
-    p {
-        margin-bottom: 1rem;
-    }
-
-    a {
-        --tw-text-opacity: 1;
-        color: rgb(180 83 9 / var(--tw-text-opacity));
-        font-weight: bold;
-        letter-spacing: 0.025em;
-    }
-
-    a:hover {
-        -webkit-text-decoration-line: underline;
-        text-decoration-line: underline;
-    }
-
-    a:focus {
-        -webkit-text-decoration-line: underline;
-        text-decoration-line: underline;
-    }
-</style>
-
 <header class="w-screen bg-cover bg-center"
         style="background-image: url('/assets/img/bosnia_welcome_featured.jpg')"
         id="index-hero">
   <div class="bg-stone-800 bg-opacity-70 w-full h-96 md:h-[32rem] flex items-center justify-start text-left">
     <div class="max-w-3xl mx-auto md:mb-24 px-4">
-      <h1 class="text-white font-bold text-3xl md:text-6xl mb-2">
+      <h1 class="text-white font-bold text-3xl xs:text-6xl mb-2">
         Bosnia International Servant Trip
       </h1>
       <p class="text-beige-100 text-lg italic">Read more about our ministry in Bosnia</p>
@@ -76,46 +39,18 @@ eleventyNavigation:
       {%- for section in collections.ministryFilteredSorted %}
         <button
           @click="section = '{{ section.data.title | slugify }}'"
-          class="w-full h-20 border flex items-center justify-center text-center px-2 font-bold text-xl shadow-sm bg-beige-300 hover:shadow-amber-100 transition duration-200 ease-out hover:border-amber-700 hover:text-amber-700 mx-auto"
+          class="w-full h-16 border flex items-center justify-center text-center px-2 font-bold text-xl shadow-sm bg-beige-300 hover:shadow-amber-100 transition duration-200 ease-out hover:border-amber-700 hover:text-amber-700 mx-auto"
           :class="section === '{{ section.data.title | slugify }}' ? 'shadow-amber-100 border-amber-700 text-amber-700' : 'border-stone-500 text-stone-800'"
         >
           {{ section.data.title }}
         </button>
       {%- endfor %}
-      {#      <button #}
-      {#        @click="section = 'camps'" #}
-      {#        class="w-full h-20 border flex items-center justify-center text-center px-2 font-bold text-xl shadow-sm bg-beige-300 hover:shadow-amber-100 transition duration-200 ease-out hover:border-amber-700 hover:text-amber-700 mx-auto" #}
-      {#        :class="section === 'camps' ? 'shadow-amber-100 border-amber-700 text-amber-700' : 'border-stone-500 text-stone-800'" #}
-      {#      > #}
-      {#        Camps #}
-      {#      </button> #}
-      {#      <button #}
-      {#        @click="section = 'stories'" #}
-      {#        class="w-full h-20 border flex items-center justify-center text-center px-2 font-bold text-xl shadow-sm bg-beige-300 hover:shadow-amber-100 transition duration-200 ease-out hover:border-amber-700 hover:text-amber-700 mx-auto" #}
-      {#        :class="section === 'stories' ? 'shadow-amber-100 border-amber-700 text-amber-700' : 'border-stone-500 text-stone-800'" #}
-      {#      > #}
-      {#        Stories from Bosnia #}
-      {#      </button> #}
-      {#      <button #}
-      {#        @click="section = 'church'" #}
-      {#        class="w-full h-20 border flex items-center justify-center text-center px-2 font-bold text-xl shadow-sm bg-beige-300 hover:shadow-amber-100 transition duration-200 ease-out hover:border-amber-700 hover:text-amber-700 mx-auto" #}
-      {#        :class="section === 'church' ? 'shadow-amber-100 border-amber-700 text-amber-700' : 'border-stone-500 text-stone-800'" #}
-      {#      > #}
-      {#        Church Connections #}
-      {#      </button> #}
-      {#      <button #}
-      {#        @click="section = 'history'" #}
-      {#        class="w-full h-20 border flex items-center justify-center text-center px-2 font-bold text-xl shadow-sm bg-beige-300 hover:shadow-amber-100 transition duration-200 ease-out hover:border-amber-700 hover:text-amber-700 mx-auto" #}
-      {#        :class="section === 'history' ? 'shadow-amber-100 border-amber-700 text-amber-700' : 'border-stone-500 text-stone-800'" #}
-      {#      > #}
-      {#        History #}
-      {#      </button> #}
     </div>
   </section>
   {% for section in collections.ministry %}
     {% if not section.data.hidden %}
       <section id="ministry-{{ section.data.title | slugify }}"
-               class="mx-auto px-4 bg-beige-300 shadow-lg py-4 leading-relaxed shadow-stone-300 border-stone-400 border-t border-b md:border-l md:border-r"
+               class="markdown mx-auto px-4 bg-beige-300 shadow-lg py-4 leading-relaxed shadow-stone-300 border-stone-400 border-t border-b md:border-l md:border-r"
                x-show="section === '{{ section.data.title | slugify }}'"
       >
         {{ section.templateContent | safe }}

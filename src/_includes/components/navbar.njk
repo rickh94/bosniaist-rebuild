@@ -6,7 +6,9 @@
 {% set navPages = collections.all | eleventyNavigation %}
 
 <div x-cloak x-data="{ menuOpen: false }">
-  <header class="flex justify-between items-center px-4 lg:px-10 h-20 bg-gradient-to-br from-beige-200 via-beige-300 to-beige-200" x-cloak>
+  <header class="flex justify-between items-center px-4 lg:px-10 h-20 bg-gradient-to-br from-beige-200 via-beige-300 to-beige-200"
+          x-cloak
+  >
     {% include "components/sitetitle.njk" %}
     {#  Desktop nav menu  on lg and larger #}
     <nav class="hidden lg:flex space-x-1 lg:space-x-2 items-center">
@@ -35,8 +37,53 @@
       </button>
     </div>
   </header>
+
+  {#  Medium nav menu with overlay and modal only on small and medium screens #}
+  <div class="fixed top-0 left-0 z-10 bg-stone-700 bg-opacity-80 w-screen h-screen hidden xs:flex items-center justify-center lg:hidden"
+       x-show="menuOpen"
+       x-transition:enter="transition ease-out duration-200"
+       x-transition:enter-start="opacity-0"
+       x-transition:enter-end="opacity-100"
+       x-transition:leave="transition ease-in duration-100"
+       x-transition:leave-start="opacity-100"
+       x-transition:leave-end="opacity-0"
+
+  >
+    <div class="bg-gradient-to-br from-beige-200 to-beige-300 p-6 w-72  shadow-lg border-stone-900 border-2">
+
+      <div class="flex justify-between items-center">
+        <div class="text-2xl font-bold">Menu</div>
+        <button class="text-black border-2 border-black" title="Close Navigation" @click="menuOpen = false">
+          {#        framed x button #}
+          <svg xmlns="http://www.w3.org/2000/svg"
+               class="h-6 w-6"
+               fill="none"
+               viewBox="0 0 24 24"
+               stroke="currentColor"
+               stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+      </div>
+      <nav class="grid grid-cols-1 gap-y-6 w-full mx-auto mt-8">
+        {%- for entry in navPages %}
+          {% if not entry.hideOnMobile %}
+            {% if entry.cta %}
+              <a href="{{ entry.url | url }}"
+                 class="inline lg:block px-2 py-1 text-center bg-black text-lg font-bold rounded text-white transition ease-in-out duration-300 hover:transform hover:-translate-y-1 focus:transform focus:-translate-y-1 selectable">{{ entry.title }}</a>
+            {% else %}
+              <a href="{{ entry.url | url }}" class="nav-link">{{ entry.title }}</a>
+            {% endif %}
+          {% endif %}
+        {%- endfor %}
+      </nav>
+    </div>
+  </div>
+
   {#  Mobile nav menu, with slide from right animation #}
-  <div class="top-0 left-0 fixed w-screen h-screen z-50 bg-gradient-to-br from-beige-200 to-beige-300 pt-2" x-show="menuOpen"
+  <div class="top-0 left-0 fixed w-screen h-screen z-50 bg-gradient-to-br from-beige-200 to-beige-300 pt-2 xs:hidden"
+       x-show="menuOpen"
        x-transition:enter="transition ease-out duration-300 transform"
        x-transition:enter-start="translate-x-full"
        x-transition:enter-end="translate-x-0"
@@ -49,7 +96,7 @@
     {#    </div> #}
     <div class="flex justify-between items-center px-4 pt-1">
       {% include "components/sitetitle.njk" %}
-      <button class="text-black border-2 rounded border-black" title="Close Navigation" @click="menuOpen = false">
+      <button class="text-black border-2 border-black" title="Close Navigation" @click="menuOpen = false">
         {#        framed x button #}
         <svg xmlns="http://www.w3.org/2000/svg"
              class="h-6 w-6"
@@ -62,7 +109,7 @@
       </button>
 
     </div>
-    <nav class="grid grid-cols-1 gap-4 sm:gap-6 p-6 max-w-lg mx-auto mt-4 sm:mt-16">
+    <nav class="grid grid-cols-1 gap-4 p-6 max-w-lg mx-auto mt-4">
       {%- for entry in navPages %}
         {% if not entry.hideOnMobile %}
           {% if entry.cta %}

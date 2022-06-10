@@ -1,7 +1,7 @@
 ---
 # @formatter:off
 title: Bosnia International Servant Trip
-description: This is a website
+description: Website of the Bonsia International Servant Trip
 layout: layouts/main.njk
 eleventyNavigation:
   key: Home
@@ -15,78 +15,33 @@ eleventyNavigation:
         id="index-hero">
   <div class="bg-stone-800 bg-opacity-70 w-full h-96 md:h-[32rem]  flex items-center">
     <div class="max-w-3xl mx-auto md:mb-24 px-4">
-      <h1 class="text-white font-bold text-3xl md:text-6xl mb-2">
+      <h1 class="text-white font-bold text-3xl xs:text-6xl mb-2">
         Bosnia International Servant Trip
       </h1>
       <p class="text-beige-100 text-lg italic">A ministry of healing, hope, and peace for Bosnia-Herzegovina and the
         world.</p>
-      {#      <div class="flex justify-center"> #}
       <a
         href="#index-actions"
         title="Get Involved"
-        class="inline-flex text-3xl items-center justify-center gap-2 font-bold bg-amber-50 rounded px-8 py-4 mt-8 md:mt-16 text-black shadow shadow-gray-700 hover:shadow-amber-800 hover:bg-amber-200 transition ease-out duration-200 selectable"
+        class="inline-flex text-3xl items-center justify-center gap-2 font-bold bg-amber-50 border-2 border-stone-900 px-8 py-4 mt-8 md:mt-16 text-black shadow shadow-gray-700 hover:border-amber-700 hover:text-amber-700 transition ease-out duration-200 selectable"
       >
         <span>Get Involved</span>
       </a>
-      {#      </div> #}
     </div>
   </div>
 </header>
-{# TODO: consider raised backgrounds #}
-<main class="max-w-4xl mx-auto px-4 mt-8 space-y-8" id="index-main-content">
-  <div class="mt-8 bg-beige-300 shadow-lg py-4 leading-relaxed shadow-stone-300 border-stone-400 border-t border-b md:border-l md:border-r">
-    <section class="border-b border-black pb-4 mx-4" id="index-pinned-text">
-      <h1 id="index-pinned-text-title" class="font-bold text-2xl mb-2">The Pandemic has prevented us from
-        traveling.
-      </h1>
-      <p id="index-pinned-text-content">
-        The Leadership Team is busy discussing and planning for our next trip. However, it's not possible to predict
-        when it will be.
-      </p>
+<main class="max-w-4xl sm:px-4 mx-auto mt-8 space-y-8" id="index-main-content">
+  <div class="markdown mt-8 bg-beige-300 shadow-lg pt-4 pb-2 leading-relaxed shadow-stone-300 border-stone-900 border-t-2 border-b-2 sm:border-l-2 sm:border-r-2">
+    <section class="border-b border-black pb-2 mb-4 mx-4" id="index-pinned-text" x-data x-show="$el.innerText">
+      {% renderFile "src/index/pinned.md" %}
     </section>
-    <section id="index-blurb" class="px-4 mt-4">
-      <h1 id="index-blurb-title" class="font-bold text-3xl mb-2">Our Ministry</h1>
-      <p id="index-blurb-content">The <strong class="font-bold">Bosnia International Servant Trip</strong> is a ministry
-        of the
-        <a href="https://njsynod.org" class="text-amber-700 hover:underline font-bold tracking-wide selectable">New
-          Jersey
-          Synod</a>,
-        <a href="https://elca.org" class="text-amber-700 hover:underline font-bold tracking-wide selectable">ELCA</a>
-        that strives to build peace in Bosnia-Herzegovina through the wonderful children of this beautiful country.
-        {#    TODO: better sentence #}
-        Each year, together with our Bonsian partners and friends, we conduct one-day camps across the country to
-        promote
-        peace, reconciliation, and racial and ethnic equality. See how you can get involved below!
-      </p>
+    <section id="index-blurb" class="px-4 markdown">
+      {% renderFile "src/index/main.md" %}
     </section>
   </div>
-  <section id="index-actions">
-    <h2 id="index-actions-title" class="font-bold text-3xl mb-6 text-center md:text-left">I'd like to...</h2>
-    <div class="grid w-52 mx-auto xs:w-[24rem] sm:w-auto grid-cols-1 xs:grid-cols-2 sm:grid-cols-4 gap-4">
-      <a href="/ministry"
-         class="w-full h-36 md:h-32 border-2 rounded-lg border-stone-700 flex items-center justify-center text-center px-6 font-bold text-2xl shadow-lg bg-beige-400 hover:shadow-amber-100 transition duration-200 ease-out hover:border-amber-700 hover:text-amber-700 mx-auto"
-      >
-        Read about the Ministry
-      </a>
-      <a href="/travel-team"
-         class="w-full h-36 md:h-32 border-2 rounded-lg border-stone-700 flex items-center justify-center text-center px-6 font-bold text-2xl shadow-lg bg-beige-400 hover:shadow-amber-100 transition duration-200 ease-out hover:border-amber-700 hover:text-amber-700 mx-auto"
-      >
-        Travel to Bosnia
-      </a>
-      <a href="/home-team"
-         class="w-full h-36 md:h-32 border-2 rounded-lg border-stone-700 flex items-center justify-center text-center px-6 font-bold text-2xl shadow-lg bg-beige-400 hover:shadow-amber-100 transition duration-200 ease-out hover:border-amber-700 hover:text-amber-700 mx-auto"
-      >
-        Help Out at Home
-      </a>
-      <a href="/donate"
-         class="w-full h-36 md:h-32 border-2 rounded-lg border-stone-900 flex items-center justify-center text-center px-6 font-bold text-2xl shadow-lg bg-beige-400 hover:shadow-amber-100 transition duration-200 ease-out hover:border-amber-700 hover:text-amber-700 mx-auto"
-      >
-        Give Money
-      </a>
-    </div>
-  </section>
+  {% include "components/index/index_actions.njk" %}
   <section id="contact"
-           class="px-4 bg-amber-50 shadow py-4 shadow-stone-300">
+           class="px-4 bg-beige-300 shadow py-4 shadow-stone-300 border-stone-900 border-t-2 border-b-2 sm:border-l-2 sm:border-r-2">
     {% include "components/contact_form.njk" %}
   </section>
 </main>
