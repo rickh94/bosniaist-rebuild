@@ -27,13 +27,6 @@ collections:
       - { label: "Hidden", name: "hidden", widget: "boolean" }
       - { label: "Default", name: "default", widget: "boolean" }
       - { label: "Body", name: "body", widget: "markdown", required: true }
-  - name: "index"
-    label: "Homepage"
-    create: false
-    folder: "src/index"
-    slug: "{{slug}}"
-    fields:
-      - { label: "Body", name: "body", widget: "markdown", required: true }
   - name: "pages"
     label: "Pages"
     create: false

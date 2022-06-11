@@ -1,5 +1,4 @@
 ---
-featured_image: null
 title: Bosnia International Servant Trip
 subtitle: A ministry of healing, hope, and peace for Bosnia-Herzegovina and the world.
 description: Homepage of the Bosnia International Servant Trip
