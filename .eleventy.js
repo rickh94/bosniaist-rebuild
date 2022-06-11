@@ -59,8 +59,6 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("sortByOrder", (value) => {
     return value.sort((a, b) => a.data.order - b.data.order);
-    // console.log('sorted' + newList.map(item => item.data.order))
-    // return newList;
   });
 
   eleventyConfig.addFilter("removeHidden", (value) => {

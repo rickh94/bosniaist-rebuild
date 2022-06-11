@@ -7,7 +7,7 @@ description: Travel to Bosnia with the Team
 layout: layouts/inner-page.njk
 eleventyNavigation:
   key: Travel Team
-  order: 0
+  order: 3
   hideOnDesktop: true
 permalink: /travel-team/index.html
 html: true
@@ -39,3 +39,8 @@ Travel Team members as well. In-country we travel from town to town in a charter
 
 In some towns we stay in hotels (usually 1-3 per room); in two towns we stay in host homes (usually 2-3 per family); and
 in two other towns we stay with partner organizations in their guest housing facilities.
+
+## I want to travel!
+
+We're so excited that you are interested in going to Bosnia with the team. We aren't taking applications right now,
+but feel free to [send us a message]
