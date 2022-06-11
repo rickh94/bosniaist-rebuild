@@ -34,8 +34,8 @@ collections:
     slug: "{{slug}}"
     fields:
       - { label: "Body", name: "body", widget: "markdown", required: true }
-  - name: "inner-pages"
-    label: "Inner Pages"
+  - name: "pages"
+    label: "Pages"
     create: false
     folder: "src/pages"
     slug: "{{slug}}"

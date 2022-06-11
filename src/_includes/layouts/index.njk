@@ -1,25 +1,15 @@
 ---
-# @formatter:off
-title: Bosnia International Servant Trip
-description: Website of the Bonsia International Servant Trip
 layout: layouts/main.njk
-eleventyNavigation:
-  key: Home
-  order: 0
-  hideOnDesktop: true
-# @formatter:on
 ---
-
 <header class="w-screen bg-cover bg-center"
-        style="background-image: url('/assets/img/bosnia_welcome_featured.jpg')"
+        style="background-image: url('{{ featured_image }}'')"
         id="index-hero">
   <div class="bg-stone-800 bg-opacity-70 w-full h-96 md:h-[32rem]  flex items-center">
     <div class="max-w-3xl mx-auto md:mb-24 px-4">
       <h1 class="text-white font-bold text-3xl xs:text-6xl mb-2">
-        Bosnia International Servant Trip
+        {{ title }}
       </h1>
-      <p class="text-beige-100 text-lg italic">A ministry of healing, hope, and peace for Bosnia-Herzegovina and the
-        world.</p>
+      <p class="text-beige-100 text-lg italic">{{ subtitle }}</p>
       <a
         href="#index-actions"
         title="Get Involved"
@@ -32,13 +22,8 @@ eleventyNavigation:
 </header>
 {# Refactor into one component, maybe whole page in pages section. #}
 <main class="max-w-4xl sm:px-4 mx-auto mt-8 space-y-8" id="index-main-content">
-  <div class="markdown mt-8 bg-beige-300 shadow-lg pt-4 pb-2 leading-relaxed shadow-stone-300 border-stone-900 border-t-2 border-b-2 sm:border-l-2 sm:border-r-2">
-    <section class="border-b border-black pb-2 mb-4 mx-4" id="index-pinned-text" x-data x-show="$el.innerText">
-      {% renderFile "src/index/pinned.md" %}
-    </section>
-    <section id="index-blurb" class="px-4 markdown">
-      {% renderFile "src/index/main.md" %}
-    </section>
+  <div class="markdown mt-8 bg-beige-300 shadow-lg px-4 pt-4 pb-2 leading-relaxed shadow-stone-300 border-stone-900 border-t-2 border-b-2 sm:border-l-2 sm:border-r-2">
+    {{ content | safe }}
   </div>
   {% include "components/index/index_actions.njk" %}
   <section id="contact"

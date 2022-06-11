@@ -8,7 +8,7 @@ layout: layouts/inner-page.njk
 eleventyNavigation:
   key: Home Team
   order: 4
-  hideOnDesktop: true
+  hideOnDesktop: false
 permalink: /home-team/index.html
 html: true
 featured_image: '/assets/img/uploads/home-team.jpg'
