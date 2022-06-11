@@ -8,10 +8,10 @@ layout: layouts/inner-page.njk
 eleventyNavigation:
   key: Travel Team
   order: 3
-  hideOnDesktop: true
+  hideOnDesktop: false
 permalink: /travel-team/index.html
 html: true
-featured_image: '/assets/img/uploads/travel-team.jpg'
+featured_image: '/assets/uploads/travel-team.jpg'
 # @formatter:on
 ---
 

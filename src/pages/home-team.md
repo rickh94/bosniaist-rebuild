@@ -11,7 +11,7 @@ eleventyNavigation:
   hideOnDesktop: false
 permalink: /home-team/index.html
 html: true
-featured_image: '/assets/img/uploads/home-team.jpg'
+featured_image: '/assets/uploads/home-team.jpg'
 # @formatter:on
 ---
 
@@ -26,7 +26,7 @@ are supplied and prepared for the trip.
 
 Each year the Home Team hand-decorates a canvas tote bag for every child and teacher that attends one of our Friendship
 Camps or Camp New Hope. We need up to 1,200 each year. If you would like to decorate some tote bags,
-please [contact us](/contact-us) and [download the instructions](/assets/img/uploads/tote-bag-instructions.pdf).
+please [contact us](/contact-us) and [download the instructions](/assets/uploads/tote-bag-instructions.pdf).
 
 #### Sewing Project
 
@@ -47,7 +47,7 @@ We appreciate support in the form of prayer. Please pray for:
 #### General Support
 
 You can give to the Bosnia IST [online](http://www.njsynod.org/bosniadonation)
-or [by mail](https://d3iyhowpvk01g6.cloudfront.net/2017/10/donationform.pdf). We greatly appreciate donations of any
+or [by mail](/assets/uploads/donationform.pdf). We greatly appreciate donations of any
 size to support our ministry.
 
 #### Sponsor a Camp
@@ -72,4 +72,4 @@ A full set for each camp consists of:
 
 Even if you can only donate a few items, that’d be great, we’ll take it!This is a great project for a Sunday School,
 Youth Group or Scout troop. If you’re interested in donating some or all of these
-items, [get more details](/assets/img/uploads/bosnia-sports-equipment.pdf) and [contact us](/contact-us).
+items, [get more details](/assets/uploads/bosnia-sports-equipment.pdf) and [contact us](/contact-us).

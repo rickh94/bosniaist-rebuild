@@ -1,4 +1,5 @@
 ---
+# @formatter:off
 title: Bosnia International Servant Trip
 subtitle: A ministry of healing, hope, and peace for Bosnia-Herzegovina and the world.
 description: Homepage of the Bosnia International Servant Trip
@@ -7,9 +8,10 @@ eleventyNavigation:
   order: 0
   hideOnDesktop: true
 layout: layouts/index.njk
-featured_image: /assets/img/uploads/bosnia_welcome_featured.jpg
+featured_image: /assets/uploads/bosnia_welcome_featured.jpg
 permalink: /
 html: true
+# @formatter:on
 ---
 ### The Pandemic has prevented us from traveling
 
