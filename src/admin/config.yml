@@ -47,7 +47,7 @@ collections:
         name: "eleventyNavigation"
         widget: "hidden"
       - { label: "Layout", name: "layout", widget: "hidden" }
-      - { label: "Featured Image", name: "featured_img", widget: "image", required: true }
+      - { label: "Featured Image", name: "featured_image", widget: "image", required: true }
       - { label: "Permalink", name: "permalink", widget: "hidden" }
       - { label: "HTML", name: "html", widget: "hidden", default: true }
       - { label: "Body", name: "body", widget: "markdown", required: true }

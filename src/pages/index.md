@@ -8,7 +8,7 @@ eleventyNavigation:
   order: 0
   hideOnDesktop: true
 layout: layouts/index.njk
-featured_img: /assets/img/uploads/bosnia_welcome_featured.jpg
+featured_image: /assets/img/uploads/bosnia_welcome_featured.jpg
 permalink: /
 html: true
 ---
