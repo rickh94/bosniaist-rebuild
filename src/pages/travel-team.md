@@ -43,4 +43,4 @@ in two other towns we stay with partner organizations in their guest housing fac
 ## I want to travel!
 
 We're so excited that you are interested in going to Bosnia with the team. We aren't taking applications right now,
-but feel free to [send us a message]
+but feel free to [send us a message](/contact-us)

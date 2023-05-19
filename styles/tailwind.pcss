@@ -11,6 +11,10 @@ html {
     font-family: 'Charis SIL', serif;
 }
 
+input {
+    border-radius: 0;
+}
+
 .selectable:focus {
     @apply ring-2 ring-amber-800 ring-offset-beige-200 ring-offset-2 outline-none rounded;
 }
@@ -42,12 +46,15 @@ html {
 }
 
 .form-control input {
-    @apply border border-stone-900 text-black bg-white w-full px-2 py-1 placeholder-gray-500 shadow-sm  transition ease-out duration-200 shadow;
+    @apply border border-stone-900 text-black bg-white w-full px-2 py-1 placeholder-gray-500 shadow-sm transition ease-out duration-200 shadow;
 }
 
+
 .form-control input:focus {
-    @apply outline-none shadow-amber-100 border-amber-700;
+    @apply outline-none shadow-amber-100 border-amber-700 ring-0;
 }
+
+
 
 .submit-button {
     @apply w-full shadow h-10 font-bold px-6 bg-black text-white outline-none transition ease-in-out duration-100 flex items-center justify-center gap-2;
@@ -99,12 +106,7 @@ html {
     }
 
     a {
-        @apply text-amber-700 tracking-wide font-bold;
-    }
-
-    a:hover,
-    a:focus {
-        @apply underline;
+        @apply text-amber-700 tracking-wide font-bold underline;
     }
 
     ul {
